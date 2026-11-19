@@ -58,7 +58,7 @@ k6 cloud run --local-execution tests\k6\stress_test.js
 | Estresse (até 100 usuários) | 9045309 | 32.767 | 44,79% | 25 ms |
 
 - **Carga:** todas as metas foram atingidas.
-- **Estresse:** o tempo de resposta ficou dentro da meta, mas a taxa de erro passou de 5%. Os erros começaram em cerca de 80 a 85 usuários simultâneos (em torno de 300 requisições por segundo) e foram de conexão recusada, não de lentidão. Esse limite vale para este ambiente (servidor simples do Python e k6 no mesmo computador).
+- **Estresse:** o tempo de resposta ficou dentro da meta, mas a taxa de erro passou de 5%. Os erros começaram em cerca de 80 a 90 usuários simultâneos (em torno de 300 requisições por segundo). Segundo o log do k6, as 14.678 falhas foram de conexão (927 recusadas e 13.751 por esgotamento de portas do Windows), não de lentidão. Esse limite vale para este ambiente (servidor simples do Python e k6 no mesmo computador).
 
 A primeira rodada de carga, com os 50 usuários entrando de uma vez, deu 7,69% de erro por conexões recusadas no primeiro segundo. O script foi ajustado para subir os usuários aos poucos.
 
